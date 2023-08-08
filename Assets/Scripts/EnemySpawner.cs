@@ -30,7 +30,7 @@ public class EnemySpawner : MonoBehaviour
                 for(int i = 0; i< currentWave.GetEnemyCount(); i++)
                 {
                     Instantiate(currentWave.GetEnemyPrefab(i),
-                            currentWave.GetStartingtWaypoint().position,
+                            currentWave.GetStartingWaypoint().position,
                             Quaternion.identity,    // this means no rotation
                             transform);   // put inside the EnemySpawner when instantiating (transform of the parent)
                     yield return new WaitForSeconds(currentWave.GetRandomSpawnTime());  // exit coroutine and come back in X seconds

@@ -12,7 +12,7 @@ public class WaveConfigSO : ScriptableObject
     [SerializeField] float spawnTimeVariance = 0f; // 0 means no variance, we can then add or subtract this
     [SerializeField] float minimumSpawnTime = 0.2f; // this is so that we dont get negative numbers with the time variance
 
-    public Transform GetStartingtWaypoint()
+    public Transform GetStartingWaypoint()
     {
         return pathPrefab.GetChild(0);
     }
