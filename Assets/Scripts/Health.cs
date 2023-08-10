@@ -8,6 +8,15 @@ public class Health : MonoBehaviour
     [SerializeField] int health = 50;
     [SerializeField] ParticleSystem hitEffect;
 
+    [SerializeField] bool applyCameraShake;
+
+    CameraShake cameraShake;
+
+    void Awake()
+    {
+        cameraShake = Camera.main.GetComponent<CameraShake>();  // camera already has this way of finding it with .main
+    }
+
     private void OnTriggerEnter2D(Collider2D other) {
         // this will only be populated if it contains a DamageDealer component, otherwise null
         DamageDealer damageDealer = other.GetComponent<DamageDealer>(); 
@@ -17,8 +26,17 @@ public class Health : MonoBehaviour
             TakeDamage(damageDealer.GetDamage());
             // show hit effect
             PlayHitEffect();
+            ShakeCamera();
             // tell damage dealer that it hit something
             damageDealer.Hit();
+        }
+    }
+
+    private void ShakeCamera()
+    {
+        if(applyCameraShake && cameraShake != null)
+        {
+            cameraShake.Play();
         }
     }
 
