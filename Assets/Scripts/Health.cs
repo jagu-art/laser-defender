@@ -11,10 +11,12 @@ public class Health : MonoBehaviour
     [SerializeField] bool applyCameraShake;
 
     CameraShake cameraShake;
+    AudioPlayer audioPlayer;
 
     void Awake()
     {
         cameraShake = Camera.main.GetComponent<CameraShake>();  // camera already has this way of finding it with .main
+        audioPlayer = FindObjectOfType<AudioPlayer>();
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
@@ -26,6 +28,9 @@ public class Health : MonoBehaviour
             TakeDamage(damageDealer.GetDamage());
             // show hit effect
             PlayHitEffect();
+            // play damage audio
+            audioPlayer.PlayDamageClip();
+            // shake camera
             ShakeCamera();
             // tell damage dealer that it hit something
             damageDealer.Hit();

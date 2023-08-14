@@ -17,6 +17,11 @@ public class Shooter : MonoBehaviour
     [SerializeField] float minimumTimeBetweenProjectiles = 0.1f; // this is so that we dont get negative numbers with the time variance
     [HideInInspector] public bool isFiring;
     Coroutine firingCoroutine;
+    AudioPlayer audioPlayer;
+
+    private void Awake() {
+        audioPlayer = FindObjectOfType<AudioPlayer>();
+    }
 
     void Start()
     {
@@ -58,6 +63,7 @@ public class Shooter : MonoBehaviour
                 rigidbody.velocity = transform.up * projectileSpeed;    // the up "versor" (green arrow) * speed = vector
             }
             Destroy(currentProjectile, projectileLifetime);  // destroy projectile after its lifetime has passed
+            audioPlayer.PlayShootingClip(); // play sound effect for shooting
             yield return new WaitForSeconds(GetRandomTimeBetweenProjectiles());  // exit coroutine and come back in X seconds
         }
         while (isFiring);
