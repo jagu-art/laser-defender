@@ -82,6 +82,5 @@ public class Health : MonoBehaviour
         if(this.isPlayer) return;
         
         scoreKeeper.SetScore(scoreKeeper.GetScore() + score);   // update score if destroyed health object is not player
-        Debug.Log("Score" + scoreKeeper.GetScore());
     }
 }
