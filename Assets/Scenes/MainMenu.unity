@@ -798,15 +798,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Space Defender
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 58905a4a661b97749a55e6d9138cff1d, type: 2}
-  m_sharedMaterial: {fileID: 7506789510708509859, guid: 58905a4a661b97749a55e6d9138cff1d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b8bdba2bfbb04e24cac58d8eae5f9af5, type: 2}
+  m_sharedMaterial: {fileID: -1544388096066092764, guid: b8bdba2bfbb04e24cac58d8eae5f9af5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294948864
-  m_fontColor: {r: 0, g: 0.72, b: 1, a: 1}
+    rgba: 3724527104
+  m_fontColor: {r: 0, g: 0.77679205, b: 1, a: 0.8666667}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -829,7 +829,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 17
+  m_fontStyle: 16
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
