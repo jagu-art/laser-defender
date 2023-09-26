@@ -13,20 +13,29 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] AudioClip damageClip;
     [SerializeField] [Range(0f, 1f)] float damageVolume = 1f; //1 is full volume
 
+    private static AudioPlayer instance;
+
+    // public AudioPlayer GetInstance() // we could use this, but globally accessible singletons are hard to manage
+    // {
+    //     return instance;
+    // }
+
     private void Awake() {
         ManageSingleton();
     }
 
     private void ManageSingleton()
     {
-        int instanceCount = FindObjectsOfType(GetType()).Length;
-        if(instanceCount > 1)
+        // int instanceCount = FindObjectsOfType(GetType()).Length; // old way singleton
+        // if(instanceCount > 1)
+        if(instance != null)    // better singleton
         {
             gameObject.SetActive(false);    // other game objects might try to access the game object before we destroy it
             Destroy(gameObject);    // destroy new game objects if there is already one
         }
         else
         {
+            instance = this;
             DontDestroyOnLoad(gameObject);  // dont destroy when loading a new scene
         }
     }
