@@ -1061,6 +1061,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b562995b0a26aae49b94719f9b956fe8, type: 2}
   - {fileID: 11400000, guid: ff7ca819debfe884aa424ae4ad332c59, type: 2}
   - {fileID: 11400000, guid: 823466137b0f8af46806be2a29c98c28, type: 2}
+  - {fileID: 11400000, guid: 243c3192df71bd34d86389175844188b, type: 2}
   timeBetweenWaves: 2
   isLooping: 1
 --- !u!1 &2126133800
